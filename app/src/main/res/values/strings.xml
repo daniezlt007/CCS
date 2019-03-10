@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CCS</string>
+    <string name="action_settings">Configurações</string>
+    <string name="salario_desejado">Salário desejado</string>
+    <string name="horas_analise">Horas de análise</string>
+    <string name="sair">Sair</string>
+    <string name="salvar">Salvar</string>
+    <string name="imposto_nota_fiscal">Imposto Nota Fiscal em %</string>
+    <string name="imposto_fgts_inss">Alíquota FGTS/INSS em %</string>
+    <string name="excluir">Excluir</string>
+    <string name="horas_de_desenvolvimento">Horas de desenvolvimento</string>
+    <string name="horas_de_testes">Horas de testes</string>
+    <string name="calcular">Calcular</string>
+    <string name="instrucoes">Salario Mensal : \nR$ 5.000,00(Salário que eu quero ganhar) + 8% (FGTS) + (1/12 13Terceiro) + (1/3 Salario Ferias)
+\n=> 5000 + 400 + 416 + 137,50 => 5.953,50 / 160 (Qtde de horas de um mes) \n=> 37,50 (Valor da hora/trabalho) + 75% = 65,11
+
+Agora faça um calculo mais ou menos de horas que vai gastar e faça as contas.
+\n
+Analise : 40 horas\n
+Desenvolvimento: 240 horas\n
+Testes: 80 horas\n
+Total de Horas: 360 horas\n
+Preço a cobrar: 360 * 65,11 => 23.439,60
+</string>
+    <string name="instrucao">Instruções</string>
+    <string name="aliquota_irpf">Alíquota IRPF</string>
+</resources>

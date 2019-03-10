@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_save"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_check_white_24dp"
+        android:title="@string/salvar"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_instrucoes"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"
+        android:title="@string/instrucao"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_excluir"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:title="@string/excluir"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"
+        android:title="@string/sair"
+        app:showAsAction="never" />
+
+</menu>

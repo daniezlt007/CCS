@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Dark.Dialog.Sucesso" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/branco</item>
+        <item name="android:textColorPrimary">@color/branco</item>
+        <item name="android:background">@color/primary_sucesso</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Info" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/branco</item>
+        <item name="android:textColorPrimary">@color/branco</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Error" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/branco</item>
+        <item name="android:textColorPrimary">@color/branco</item>
+        <item name="android:background">@color/primary_error</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Alert" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/branco</item>
+        <item name="android:textColorPrimary">@color/branco</item>
+        <item name="android:background">@color/primary_alert</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="alturaInput">50dp</dimen>
+    <dimen name="larguraInput">250dp</dimen>
+    <dimen name="padding_toast">10dip</dimen>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="branco">#fff</color>
+    <color name="bg_toast">#0c0c4d</color>
+
+    <color name="primary_sucesso">#8cc53e</color>
+    <color name="primary_info">#52c5b9</color>
+    <color name="primary_error">#ff081e</color>
+    <color name="primary_alert">#ffae41</color>
+
+</resources>
