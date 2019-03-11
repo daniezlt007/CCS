@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/daniel/AndroidStudioProjects/ProjetoDelivery/CCS/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru/values-ru.xml",
+            "outputFile": "/home/daniel/AndroidStudioProjects/CCS/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/761df5654984f0c9aa61df6c3b6a2a66/res/values-ru/values-ru.xml",
