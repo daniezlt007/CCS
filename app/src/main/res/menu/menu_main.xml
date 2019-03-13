@@ -17,6 +17,13 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_lista"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_list_white_24dp"
+        android:title="@string/listagem"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_exit"
         android:orderInCategory="100"
         android:icon="@drawable/ic_exit_to_app_white_24dp"

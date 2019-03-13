@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_background"
     tools:context=".activitys.ConfigActivity">
 
     <EditText
@@ -22,7 +23,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/txtFgtsInss"
+        android:id="@+id/txtHoraAnalise"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="@dimen/alturaInput"
         android:layout_marginStart="8dp"
@@ -51,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/imposto_fgts_inss"
-        app:layout_constraintStart_toStartOf="@+id/txtFgtsInss"
+        app:layout_constraintStart_toStartOf="@+id/txtHoraAnalise"
         app:layout_constraintTop_toBottomOf="@+id/txtSalarioDesejado" />
 
 

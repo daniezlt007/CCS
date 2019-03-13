@@ -11,4 +11,6 @@
     <color name="primary_error">#ff081e</color>
     <color name="primary_alert">#ffae41</color>
 
+    <color name="primary_background">#DFDCDC</color>
+
 </resources>

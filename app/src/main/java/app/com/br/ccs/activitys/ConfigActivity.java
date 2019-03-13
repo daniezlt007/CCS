@@ -26,7 +26,7 @@ public class ConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_config);
         Paper.init(this);
 
-        txtFgtsInss = findViewById(R.id.txtFgtsInss);
+        txtFgtsInss = findViewById(R.id.txtHoraAnalise);
         txtImpostoNfe = findViewById(R.id.txtSalarioDesejado);
         lerDados();
 
@@ -59,6 +59,7 @@ public class ConfigActivity extends AppCompatActivity {
             case R.id.action_instrucoes:
                 Intent intent = new Intent(ConfigActivity.this, InstrucoesActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.action_excluir:
                     Common.showMsgConfirm(ConfigActivity.this, "Remover Configurações", "Deseja realmente remover essa configuração?", new DialogInterface.OnClickListener() {
@@ -73,7 +74,7 @@ public class ConfigActivity extends AppCompatActivity {
                     });
                 break;
             case R.id.action_exit:
-                lerDados();
+                finishAffinity();
                 break;
         }
         return super.onOptionsItemSelected(item);

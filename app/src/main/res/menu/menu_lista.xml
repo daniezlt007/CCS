@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="appconsultacontas.com.br.ccs.activitys.MainActivity">
+
+    <item
+        android:id="@+id/action_main"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"
+        android:title="@string/tela_principal"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_build_white_24dp"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_instrucoes"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"
+        android:title="@string/instrucao"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"
+        android:title="@string/sair"
+        app:showAsAction="never" />
+
+</menu>

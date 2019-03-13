@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activitys.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -13,7 +14,7 @@
         android:id="@+id/txtSalarioDesejado"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="0dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/inputs"
         android:ems="10"
         android:hint="@string/salario_desejado"
@@ -25,14 +26,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/txtFgtsInss"
+        android:id="@+id/txtHoraAnalise"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="0dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="19dp"
         android:background="@drawable/inputs"
         android:ems="10"
         android:hint="@string/horas_analise"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +44,11 @@
         android:id="@+id/txtDev"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="0dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/inputs"
         android:ems="10"
         android:hint="@string/horas_de_desenvolvimento"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,11 +59,11 @@
         android:id="@+id/txtTestes"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="0dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/inputs"
         android:ems="10"
         android:hint="@string/horas_de_testes"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +74,7 @@
         android:id="@+id/btnCalcular"
         android:layout_width="@dimen/larguraInput"
         android:layout_height="0dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="77dp"
         android:background="@drawable/botao"
         android:text="@string/calcular"
         android:textAlignment="center"
@@ -87,22 +88,21 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:layout_marginBottom="14dp"
         android:text="@string/salario_desejado"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtSalarioDesejado"
         app:layout_constraintStart_toStartOf="@+id/txtSalarioDesejado"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeEmpresa" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/horas_analise"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtFgtsInss"
+        app:layout_constraintBottom_toTopOf="@+id/txtHoraAnalise"
         app:layout_constraintStart_toStartOf="@+id/txtSalarioDesejado"
         app:layout_constraintTop_toBottomOf="@+id/txtSalarioDesejado" />
 
@@ -110,12 +110,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/horas_de_desenvolvimento"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtDev"
         app:layout_constraintStart_toStartOf="@+id/txtDev"
-        app:layout_constraintTop_toBottomOf="@+id/txtFgtsInss" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHoraAnalise" />
 
     <TextView
         android:id="@+id/textView4"
@@ -125,7 +125,33 @@
         android:text="@string/horas_de_testes"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtTestes"
-        app:layout_constraintStart_toStartOf="@+id/txtTestes"
+        app:layout_constraintStart_toStartOf="@+id/txtDev"
         app:layout_constraintTop_toBottomOf="@+id/txtDev" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="14dp"
+        android:text="Nome Empresa"
+        app:layout_constraintBottom_toTopOf="@+id/txtNomeEmpresa"
+        app:layout_constraintStart_toStartOf="@+id/txtNomeEmpresa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNomeEmpresa"
+        android:layout_width="@dimen/larguraInput"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/inputs"
+        android:ems="10"
+        android:hint="@string/nome_empresa"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 </android.support.constraint.ConstraintLayout>

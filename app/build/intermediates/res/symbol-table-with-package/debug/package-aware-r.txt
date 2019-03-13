@@ -674,6 +674,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_alert
+color primary_background
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_error
@@ -1024,6 +1025,7 @@ drawable ic_exit_to_app_black_24dp
 drawable ic_exit_to_app_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_list_white_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1068,6 +1070,8 @@ id action_excluir
 id action_exit
 id action_image
 id action_instrucoes
+id action_lista
+id action_main
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -1150,6 +1154,7 @@ id line1
 id line3
 id listMode
 id list_item
+id lista
 id lytToast
 id masked
 id message
@@ -1237,6 +1242,7 @@ id textView4
 id textView5
 id textView6
 id textView7
+id textView8
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1255,10 +1261,14 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id txtDev
-id txtFgtsInss
+id txtHoraAnalise
+id txtNomeEmpresa
 id txtSalarioDesejado
 id txtTestes
 id txtToast
+id txtValorFgts1
+id txtValorHora1
+id txtValorTotal1
 id uniform
 id unlabeled
 id up
@@ -1317,6 +1327,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_config
 layout activity_instrucoes
+layout activity_list
 layout activity_main
 layout content_main
 layout design_bottom_navigation_item
@@ -1333,6 +1344,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout linha
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1347,6 +1359,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout toast_template
 menu menu_config
+menu menu_lista
 menu menu_main
 mipmap ic_launcher
 string abc_action_bar_home_description
@@ -1407,7 +1420,10 @@ string imposto_fgts_inss
 string imposto_nota_fiscal
 string instrucao
 string instrucoes
+string limpar_lista
+string listagem
 string mtrl_chip_close_icon_content_description
+string nome_empresa
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1418,6 +1434,7 @@ string salario_desejado
 string salvar
 string search_menu_title
 string status_bar_notification_info_overflow
+string tela_principal
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

@@ -35,10 +35,12 @@ public class InstrucoesActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Intent intent = new Intent(InstrucoesActivity.this, ConfigActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.action_instrucoes:
                 Intent instrucao = new Intent(InstrucoesActivity.this, MainActivity.class);
                 startActivity(instrucao);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

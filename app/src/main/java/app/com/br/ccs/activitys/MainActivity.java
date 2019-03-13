@@ -5,15 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import app.com.br.ccs.R;
 import app.com.br.ccs.enums.TipoMsg;
@@ -25,7 +25,7 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity {
 
     Button btnCalcular;
-    private EditText txtSalarioDesejado, txtHoraDev, txtHoraAnalise, txtHoraTeste;
+    private EditText txtNomeEmpresa, txtSalarioDesejado, txtHoraDev, txtHoraAnalise, txtHoraTeste;
     private AlertDialog alerta;
 
 
@@ -37,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Paper.init(this);
+        ArrayList<Servico> listaServico = new ArrayList<>();
+        Paper.book().write("listaServico", listaServico);
 
+        txtNomeEmpresa = findViewById(R.id.txtNomeEmpresa);
         txtSalarioDesejado = findViewById(R.id.txtSalarioDesejado);
         txtHoraDev = findViewById(R.id.txtDev);
-        txtHoraAnalise = findViewById(R.id.txtFgtsInss);
+        txtHoraAnalise = findViewById(R.id.txtHoraAnalise);
         txtHoraTeste = findViewById(R.id.txtTestes);
         btnCalcular = findViewById(R.id.btnCalcular);
+        txtNomeEmpresa.requestFocus();
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 Servico servico = new Servico();
 
                 if(!validarCampos()) {
+                    servico.setNomeEmpresa(txtNomeEmpresa.getText().toString());
                     servico.setSalarioDesejado(Double.parseDouble(txtSalarioDesejado.getText().toString()));
                     servico.setHoraAnalise(Integer.parseInt(txtHoraAnalise.getText().toString()));
                     servico.setHoraDesenvolvimento(Integer.parseInt(txtHoraDev.getText().toString()));
@@ -61,58 +66,89 @@ public class MainActivity extends AppCompatActivity {
                     double notaFiscal = 0.0;
                     double decimoFerias = salario / 12;
                     double feriasTerco = salario / 3;
-                    int analise = servico.getHoraAnalise();
-                    int dev = servico.getHoraDesenvolvimento();
-                    int teste = servico.getHoraTestes();
-                    int totalHora = analise + dev + teste;
+
                     double valorNF = 0.0;
 
                     if (configuracao != null) {
-                        fgts = (salario * (configuracao.getImpostoFgts())) / 100;
-                        notaFiscal = configuracao.getImpostoNfe();
-                        valorNF = notaFiscal;
+                        if(fgts > 0){
+                            fgts = (salario * (configuracao.getImpostoFgts())) / 100;
+                            notaFiscal = configuracao.getImpostoNfe();
+                        } else {
+                            fgts = Common.retornaFgts(salario);
+                        }
                     } else {
                         fgts = Common.retornaFgts(salario);
                     }
-                    double valorHora = (salario + fgts + decimoFerias + feriasTerco) / 160;
-
-                    double valorTotalSemNota = totalHora * valorHora;
+                    double valorHora = ((salario + fgts + decimoFerias + feriasTerco) / 160);
+                    double valorFinalHora = (valorHora * 75)/100;
+                    double valorTotalSemNota = servico.totalHoras() * (valorHora + valorFinalHora);
                     valorNF = (valorTotalSemNota * notaFiscal) / 100;
                     double valorTotalComNota = valorTotalSemNota + valorNF;
-                    StringBuilder info = new StringBuilder();
-                    info.append("Salário Desejado - " + Common.numeroformatadoEmReal.format(servico.getSalarioDesejado()) + "\n");
-                    info.append("FGTS - " + Common.numeroformatadoEmReal.format(fgts) + "\n");
-                    info.append("1/12 13º - " + Common.numeroformatadoEmReal.format(decimoFerias) + "\n");
-                    info.append("1/3 Férias - " + Common.numeroformatadoEmReal.format(feriasTerco) + "\n");
-                    info.append("Valor por Hora - " + Common.numeroformatadoEmReal.format(valorHora) + "\n");
-                    info.append(Common.div);
-                    info.append("Análise: " + analise + "\n");
-                    info.append("Desenvolvimento: " + dev + "\n");
-                    info.append("Testes: " + teste + "\n");
-                    info.append("Total de horas: " + totalHora + "\n");
-                    info.append(Common.div);
-                    info.append("Valor NF " + Common.numeroformatadoEmReal.format(valorNF) + "\n");
-                    info.append(Common.div);
-                    info.append("Valor Total S/ NF " + Common.numeroformatadoEmReal.format(valorTotalSemNota) + "\n");
-                    info.append("Valor Total C/ NF " + Common.numeroformatadoEmReal.format(valorTotalComNota) + "\n");
-                    info.append(Common.div);
-                    Common.showMsgAlertOK(MainActivity.this, info.toString(), "Valor a cobrar", TipoMsg.INFO);
 
+                    servico.setFgts(fgts);
+                    servico.setDecimoTerceiro(decimoFerias);
+                    servico.setParteFerias(feriasTerco);
+                    servico.setValorPorHora(valorHora + valorFinalHora);
+                    servico.setValorImpostoNf(valorNF);
+                    servico.setValorTotalSemNf(valorTotalSemNota);
+                    servico.setValorTotalComNf(valorTotalComNota);
+
+                    mostrarResultado(servico);
+                    ArrayList<Servico> listaServico = Paper.book().read("listaServico");
+                    if(listaServico != null){
+                        listaServico.add(servico);
+                        Paper.book().write("listaServico", listaServico);
+                    }else{
+                        listaServico = new ArrayList<>();
+                        Paper.book().write("listaServico", listaServico);
+                    }
+
+                    txtNomeEmpresa.setText("");
                     txtHoraAnalise.setText("");
                     txtHoraDev.setText("");
                     txtHoraTeste.setText("");
                     txtSalarioDesejado.setText("");
+                    txtNomeEmpresa.requestFocus();
 
                 }
             }
         });
     }
 
+    private void mostrarResultado(Servico servico) {
+        StringBuilder info = new StringBuilder();
+        info.append("Nome empresa - " + servico.getNomeEmpresa() + "\n");
+        info.append("Salário Desejado - " + Common.numeroformatadoEmReal.format(servico.getSalarioDesejado()) + "\n");
+        info.append("FGTS - " + Common.numeroformatadoEmReal.format(servico.getFgts()) + "\n");
+        info.append("1/12 13º - " + Common.numeroformatadoEmReal.format(servico.getDecimoTerceiro()) + "\n");
+        info.append("1/3 Férias - " + Common.numeroformatadoEmReal.format(servico.getParteFerias()) + "\n");
+        info.append("Valor por Hora - " + Common.numeroformatadoEmReal.format(servico.getValorPorHora()) + "\n");
+        info.append(Common.div);
+        info.append("Análise: " + servico.getHoraAnalise() + "\n");
+        info.append("Desenvolvimento: " + servico.getHoraDesenvolvimento() + "\n");
+        info.append("Testes: " + servico.getHoraTestes() + "\n");
+        info.append("Total de horas: " + servico.totalHoras() + "\n");
+        info.append(Common.div);
+        info.append("Valor NF " + Common.numeroformatadoEmReal.format(servico.getValorImpostoNf()) + "\n");
+        info.append(Common.div);
+        info.append("Valor Total S/ NF " + Common.numeroformatadoEmReal.format(servico.getValorTotalSemNf()) + "\n");
+        info.append("Valor Total C/ NF " + Common.numeroformatadoEmReal.format(servico.getValorTotalComNf()) + "\n");
+        info.append(Common.div);
+        Common.showMsgAlertOK(MainActivity.this, info.toString(), "Valor a cobrar", TipoMsg.INFO);
+    }
+
     public boolean validarCampos(){
+        String nome_empresa = txtNomeEmpresa.getText().toString();
         String salario = txtSalarioDesejado.getText().toString();
         String horaAnalise = txtHoraAnalise.getText().toString();
         String horaDev = txtHoraDev.getText().toString();
         String horaTeste = txtHoraTeste.getText().toString();
+
+        if(nome_empresa.equals("") || nome_empresa.equals(null)){
+            txtNomeEmpresa.setError("Campo obrigatório");
+            return true;
+        }
+
         if(salario.equals("") || salario.equals(null)){
             txtSalarioDesejado.setError("Campo obrigatório");
             return true;
@@ -162,6 +198,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent instrucao = new Intent(MainActivity.this, InstrucoesActivity.class);
                 startActivity(instrucao);
                 break;
+
+            case R.id.action_lista:
+                Intent lista = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(lista);
+                break;
+
+            case R.id.action_exit:
+                finishAffinity();
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
