@@ -2,10 +2,14 @@
   <library name="Gradle: com.android.support:support-compat:28.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/761df5654984f0c9aa61df6c3b6a2a66/annotations.zip!/" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/7172112ab543536ad4df127264db9ed7/transformed/support-compat-28.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/761df5654984f0c9aa61df6c3b6a2a66/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/761df5654984f0c9aa61df6c3b6a2a66/jars/classes.jar!/" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/7172112ab543536ad4df127264db9ed7/transformed/support-compat-28.0.0/jars/classes.jar!/" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/7172112ab543536ad4df127264db9ed7/transformed/support-compat-28.0.0/res" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/7172112ab543536ad4df127264db9ed7/transformed/support-compat-28.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

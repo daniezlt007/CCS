@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Paper.init(this);
-        ArrayList<Servico> listaServico = new ArrayList<>();
-        Paper.book().write("listaServico", listaServico);
+        /*ArrayList<Servico> listaServico = new ArrayList<>();
+        Paper.book().write("listaServico", listaServico);*/
 
         txtNomeEmpresa = findViewById(R.id.txtNomeEmpresa);
         txtSalarioDesejado = findViewById(R.id.txtSalarioDesejado);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     double valorNF = 0.0;
 
                     if (configuracao != null) {
-                        if(fgts > 0){
+                        if(configuracao.getImpostoFgts() > 0){
                             fgts = (salario * (configuracao.getImpostoFgts())) / 100;
                             notaFiscal = configuracao.getImpostoNfe();
                         } else {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                     mostrarResultado(servico);
                     ArrayList<Servico> listaServico = Paper.book().read("listaServico");
-                    if(listaServico != null){
+                    if(listaServico != null || !listaServico.isEmpty()){
                         listaServico.add(servico);
                         Paper.book().write("listaServico", listaServico);
                     }else{
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         info.append("Testes: " + servico.getHoraTestes() + "\n");
         info.append("Total de horas: " + servico.totalHoras() + "\n");
         info.append(Common.div);
-        info.append("Valor NF " + Common.numeroformatadoEmReal.format(servico.getValorImpostoNf()) + "\n");
+        info.append("Valor aproximado do Imposto da NF " + Common.numeroformatadoEmReal.format(servico.getValorImpostoNf()) + "\n");
         info.append(Common.div);
         info.append("Valor Total S/ NF " + Common.numeroformatadoEmReal.format(servico.getValorTotalSemNf()) + "\n");
         info.append("Valor Total C/ NF " + Common.numeroformatadoEmReal.format(servico.getValorTotalComNf()) + "\n");

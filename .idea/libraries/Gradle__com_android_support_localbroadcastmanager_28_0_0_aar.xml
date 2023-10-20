@@ -3,6 +3,8 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8ed9dbd0bf91e5612b75070181205326/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8ed9dbd0bf91e5612b75070181205326/res" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/f7647a296bca86c43de08eb3423231e5/transformed/localbroadcastmanager-28.0.0/AndroidManifest.xml" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/f7647a296bca86c43de08eb3423231e5/transformed/localbroadcastmanager-28.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

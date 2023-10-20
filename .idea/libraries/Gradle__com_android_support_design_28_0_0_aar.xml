@@ -2,10 +2,14 @@
   <library name="Gradle: com.android.support:design:28.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5ca386fd9f20adc7c96968498ef965f5/annotations.zip!/" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/d8fced5e85ea6b204dee4eb20cd07a89/transformed/design-28.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5ca386fd9f20adc7c96968498ef965f5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5ca386fd9f20adc7c96968498ef965f5/res" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/d8fced5e85ea6b204dee4eb20cd07a89/transformed/design-28.0.0/AndroidManifest.xml" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/d8fced5e85ea6b204dee4eb20cd07a89/transformed/design-28.0.0/res" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/d8fced5e85ea6b204dee4eb20cd07a89/transformed/design-28.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

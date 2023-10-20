@@ -2,10 +2,13 @@
   <library name="Gradle: com.android.support:drawerlayout:28.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/9a680447dd138dff966147815186830c/annotations.zip!/" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/9aa0b013fe95acca61e4b4734a582fcb/transformed/drawerlayout-28.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/9a680447dd138dff966147815186830c/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/9a680447dd138dff966147815186830c/res" />
+      <root url="jar://C:/gradle-7.3.1/bin/caches/transforms-3/9aa0b013fe95acca61e4b4734a582fcb/transformed/drawerlayout-28.0.0/jars/classes.jar!/" />
+      <root url="file://C:/gradle-7.3.1/bin/caches/transforms-3/9aa0b013fe95acca61e4b4734a582fcb/transformed/drawerlayout-28.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

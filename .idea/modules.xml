@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CCS.iml" filepath="$PROJECT_DIR$/CCS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CCS.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CCS.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CCS.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CCS.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CCS.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CCS.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CCS.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CCS.app.unitTest.iml" />
     </modules>
   </component>
 </project>
